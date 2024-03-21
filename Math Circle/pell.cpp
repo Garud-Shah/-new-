@@ -7,7 +7,7 @@ int main(){
     long long int x = 2;
     int amin = 0; int bmin = 0;
     for (int a=amin; a<kmax; a++){
-        for (int b=(a*sqrt(2) - 1); b<=(a*sqrt(2)*2); b++){
+        for (int b=bmin; b<=a; b++){
             if (abs(a*a - x*b*b) == 1){
                 cout << a << " " << b << endl;
                 amin = a;
