@@ -19,7 +19,7 @@ bool check(vector<string> a, vector<string> b, int pos){
     return true;
 }
 int main(){
-    freopen("2.in","r",stdin);
+    freopen("cownomics.in","r",stdin);
     freopen("cownomics.out","w",stdout);
     int M,N;
     cin >> N >> M;
