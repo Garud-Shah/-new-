@@ -14,13 +14,12 @@ int ranker(int cow, int round){
 bool wins(int cow1, int cow2, int round){
     return (ranker(cow1,round) >= ranker(cow2,round));
 }
-bool always(int cow1, int cow2){
+int always(int cow1, int cow2){
+    int total = 0;
     for (int i=0; i<K; i++){
-        if (wins(cow2,cow1,i)){
-            return false;
-        }
+        total += wins(cow1, cow2, i);
     }
-    return true;
+    return total;
 }
 int main(){
     freopen("2.in","r",stdin);
@@ -35,7 +34,7 @@ int main(){
     int pairs = 0;
     for (int i=0;i<N;i++){
         for (int j=0;i<N;i++){
-            pairs+=always(i,j);
+            pairs+=(always(i,j)==K);
         }
     }
     cout << pairs;
