@@ -1,18 +1,17 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-vector<int> rankings = {};
+vector<vector<int>> rankings = {};
 int N,K;
 int ranker(int cow, int round){
-    for (int i = round*N; i<(round+1)*N; i++){
-        if (rankings[i]==cow){
-            return (i - round*N);
+    for (int i=0; i<N; i++){
+        if (rankings[round][i] == cow){
+            return i;
         }
     }
-    return 0;
 }
 bool wins(int cow1, int cow2, int round){
-    return (ranker(cow1,round) >= ranker(cow2,round));
+    return (ranker(cow1,round) < ranker(cow2,round));
 }
 int always(int cow1, int cow2){
     int total = 0;
@@ -24,12 +23,16 @@ int always(int cow1, int cow2){
 int main(){
     freopen("2.in","r",stdin);
     freopen("gymnastics.out","w",stdout);   
-    cin >> N;
     cin >> K;
-    for (int i=0;i<N*K;i++){
-        int input;
-        cin >> input;
-        rankings.push_back(input);
+    cin >> N;
+    for (int i=0;i<K;i++){
+        vector<int> push = {};
+        for (int j=0; j<N; j++){
+            int input;
+            cin >> input;
+            push.push_back(input);
+        }
+        rankings.push_back(push);
     }
     int pairs = 0;
     for (int i=0;i<N;i++){
