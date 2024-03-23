@@ -6,7 +6,7 @@ int N,K;
 int ranker(int cow, int round){
     for (int i=0; i<N; i++){
         if (rankings[round][i] == cow){
-            return i;
+            return i + 1;
         }
     }
 }
@@ -21,7 +21,7 @@ int always(int cow1, int cow2){
     return total;
 }
 int main(){
-    freopen("2.in","r",stdin);
+    freopen("gymnastics.in","r",stdin);
     freopen("gymnastics.out","w",stdout);   
     cin >> K;
     cin >> N;
