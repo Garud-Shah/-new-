@@ -20,8 +20,7 @@ int main(){
     for (int i=0; i<t; i++){
         string input; cin >> input;
         int input_hours = 10 * (input[0] - '0') + (input[1] - '0');
-        int input_minutes = 10 * (input[3] - '0') + (input[4] - '2');
-
+        int input_minutes = 10 * (input[3] - '0') + (input[4] - '2') + 2;
         if (input_hours == 0){
             cout << "12:" << twodigitstring(input_minutes) << " AM";
         } else if (input_hours < 12){
@@ -31,5 +30,6 @@ int main(){
         } else {
             cout << twodigitstring(input_hours - 12) << ":" << twodigitstring(input_minutes) << " PM";
         }
+        cout << endl;
     }
 }
