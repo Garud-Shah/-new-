@@ -54,7 +54,7 @@ int main(){
         cin >> input2;
         condititons.push_back({fix[input1],fix[input2]});
     }    
-    permuation(7);
+    permuation(8);
     for (int i=0; i<8; i++){
         cout << names[numbers[i]] << endl;
     }
