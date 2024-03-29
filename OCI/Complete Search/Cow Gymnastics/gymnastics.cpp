@@ -6,7 +6,7 @@ int N,K;
 int ranker(int cow, int round){
     for (int i=0; i<N; i++){
         if (rankings[round][i] == cow){
-            return i + 1;
+            return i;
         }
     }
 }
