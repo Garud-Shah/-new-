@@ -1,8 +1,7 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
-#include <set>
 #include <map>
+#include <algorithm>
 using namespace std;
 vector<int> numbers = {};
 vector<pair<int,int>> condititons = {};
