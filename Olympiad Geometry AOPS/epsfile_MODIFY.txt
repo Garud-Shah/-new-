@@ -1,0 +1,2 @@
+asy -outname Construction/W4P1/diagram.eps Construction/W4P1/diagram.asy
+epstopdf Construction/W4P1/diagram.eps --output Construction/W4P1/diagram.pdf

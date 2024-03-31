@@ -1,0 +1,2 @@
+asy -wsl -outname [file-name].eps [file-name].asy
+epstopdf [file-name].eps --output [file-name].pdf
