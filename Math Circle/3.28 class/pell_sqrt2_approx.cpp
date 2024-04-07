@@ -12,3 +12,4 @@ int main(){
         cout << "Root 2 Approximation: " << approx << endl;
     }
 }
+ 

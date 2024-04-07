@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage{garudstyle}
+\title{\begin{center}
+    Oregon ARML PoTDs - Spring 2024
+\end{center}
+\begin{center}
+    \textbf{PoTD Problem 6}
+\end{center}} 
+\author{\textbf{Garud Shah}}
+\date{\textit{April 6th 2024}}
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\section{Problem}
+Let $n \ge 3$ be a positive integer. Consider the polygon formed by the $n$th roots of unity. If
+complex $z, w$ are in this polygon, prove $zw$ is too.
+\section{Modulus}
+Put $z$ and $w$ in exponential form. Let $w = r_w \cdot e^{i \theta_w}$ and 
+$z = r_z \cdot e^{i \theta_z}$. Now, notice that the polygon is symmetric with rotation symmetry
+of angle $\dfrac{2\pi}{n}$. Thus, we only consider $\theta \pmod{ \dfrac{2 \pi}{n}}$.
+\begin{center}
+    \begin{asy}
+        import olympiad;
+        import cse5;
+        unitsize(0.5inch);
+        int n = 10;
+        for (int i=0; i<n; ++i) {
+            pair dir1 = dir(360 * i / n) * 5;
+            pair dir2 = dir(360 * (i + 1) / n) * 5;
+            draw(dir1 -- dir2); 
+        }
+        drawline((0, 1), (0, -1));
+        drawline((1, 0), (-1, 0));
+        dot(dir(60)*0.7*5);
+        label(dir(60)*0.7*5, "$w = r_w \cdot e^{i \theta_w}$", SE);
+    \end{asy}
+\end{center}
+\section{Law Of Sines}
+Noti
+\section{Inequalities I}
+teete
+\section{Inequalities II}
+etetet
+\end{document}

@@ -1,0 +1,3 @@
+pdflatex Spring_2024/Season_1_2/PoTD_6.tex
+asy -wsl -outnameSpring_2024/Season_1_2/PoTD_6-1.epsSpring_2024/Season_1_2/PoTD_6-1.asy
+pdflatex Spring_2024/Season_1_2/PoTD_6.tex
