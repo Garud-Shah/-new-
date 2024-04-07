@@ -24,23 +24,90 @@ of angle $\dfrac{2\pi}{n}$. Thus, we only consider $\theta \pmod{ \dfrac{2 \pi}{
     \begin{asy}
         import olympiad;
         import cse5;
-        unitsize(0.5inch);
+        unitsize(2inch);
         int n = 10;
         for (int i=0; i<n; ++i) {
-            pair dir1 = dir(360 * i / n) * 5;
-            pair dir2 = dir(360 * (i + 1) / n) * 5;
+            pair dir1 = dir(360 * i / n);
+            pair dir2 = dir(360 * (i + 1) / n);
             draw(dir1 -- dir2); 
         }
-        drawline((0, 1), (0, -1));
-        drawline((1, 0), (-1, 0));
-        dot(dir(60)*0.7*5);
-        label(dir(60)*0.7*5, "$w = r_w \cdot e^{i \theta_w}$", SE);
+        draw((0, 1.2) -- (0, -1.2));
+        draw((1.2, 0) -- (-1.2, 0));
+        dot(dir(60)*0.7);
+        label("$w = r_w \cdot e^{i \theta_w}$", dir(60)*0.7, SE);
+        dot(dir(143)*0.44);
+        label("$z = r_z \cdot e^{i \theta_z}$", dir(143)*0.4, S);
     \end{asy}
 \end{center}
+\newpage
 \section{Law Of Sines}
-Noti
+Going forward, let $\theta_w$ are $\theta_z$ have the Modulus automatically applied. \newline
+Now, let some complex number $w$ have the modulus applied. We want to check whether it is within
+the polygon. \newline
+Let its angle be theta. Now, notice that we now must make a judgement solely based on magnitude.
+Now, by drawing a line segment from the origin to the polygon, we find the magnitude cutoff. Notice 
+that this cutoff is the length of this segment. By Law Of Sines, the length of this segment is,
+if the length is $k$,
+\begin{align}
+    \dfrac{k}{\sin \left( \dfrac{\pi}{2} - \dfrac{\pi}{n}\right)} &= 
+    \dfrac{1}{\sin \left( \dfrac{\pi}{2} - \dfrac{\pi}{n} + \theta\right)} \\
+    \iff \dfrac{k}{\cos \left(\dfrac{\pi}{n}\right)} &= 
+    \dfrac{1}{\cos \left(\dfrac{\pi}{n} - \theta\right)} \\
+    \iff k &= \dfrac{\cos \left(\dfrac{\pi}{n}\right)}{\cos \left(\dfrac{\pi}{n} - \theta\right)}.
+\end{align}
+\newpage
 \section{Inequalities I}
-teete
+We consider Case 1. \newline
+\textbf{Case 1: $\dfrac{2 \pi}{n} \le \theta_w + \theta_z < \dfrac{2 \pi}{n}$} \newline
+Notice that to bring us back into the proper range, we must subtract an extra $\dfrac{2 \pi}{n}$. \newline
+So, since $\theta_w + \theta_z - \dfrac{3 \pi}{n}$ and 
+$\theta_w + \theta_z - \dfrac{3 \pi}{n}$ are both less than $\pi$, by monotonicity of cosine:
+\begin{align}
+    & \dfrac
+    {\cos \left(\dfrac{\pi}{n}\right)}
+    {\cos \left( \theta_w + \theta_z - \dfrac{3 \pi}{n}\right)} \\
+    &\ge \dfrac
+    {\cos^2 \left(\dfrac{\pi}{n}\right)}
+    {\cos \left( \theta_w + \theta_z - \dfrac{2 \pi}{n}\right)} \\
+    &= \dfrac
+    {\cos^2 \left(\dfrac{\pi}{n}\right)}
+    {\cos \left( \theta_w - \dfrac{\pi}{n}\right) \cdot \cos \left( \theta_w - \dfrac{\pi}{n}\right)
+    + \sin \left( \theta_w - \dfrac{\pi}{n}\right) \cdot \sin \left( \theta_z - \dfrac{\pi}{n}\right)} \\
+    &\ge \dfrac
+    {\cos^2 \left(\dfrac{\pi}{n}\right)}
+    {\cos \left( \theta_w - \dfrac{\pi}{n}\right) \cdot \cos \left( \theta_w - \dfrac{\pi}{n}\right)} \\
+    &\ge r_w r_z,
+\end{align}
+so we are done with this case. $\boxed{\text{ }}$
+\newpage
 \section{Inequalities II}
-etetet
+We consider Case 2. \newline
+\textbf{Case 2: $\theta_w + \theta_z < \dfrac{2 \pi}{n}$} \newline
+Notice that if 
+\begin{align}
+    \dfrac
+    {\cos^2 \left(\dfrac{\pi}{n}\right)}
+    {\cos \left( \theta_w - \dfrac{\pi}{n}\right) \cdot \cos \left( \theta_w - \dfrac{\pi}{n}\right)}
+    & \le \dfrac
+    {\cos \left(\dfrac{\pi}{n}\right)}
+    {\cos \left( \theta_w + \theta_z - \dfrac{\pi}{n}\right)},
+\end{align}
+we'd be done. Rearranging, this is, by product-to-sum 
+\begin{align}
+    \cos \left(\dfrac{\pi}{n}\right) \cos \left( \theta_w + \theta_z - \dfrac{\pi}{n} \right)
+    \le &
+    \cos \left( \theta_w - \dfrac{\pi}{n} \right) \cos \left( \theta_w - \dfrac{\pi}{n} \right) \\
+    \iff & \dfrac{1}{2} \left( \cos \left(\theta_w + \theta_z \right) 
+    + \cos \left(\dfrac{\theta_w + \theta_z}{2} - \dfrac{\pi}{n}\right) \right) \\
+    \le & \dfrac{1}{2} \left( \cos \left(\theta_w - \theta_z\right) 
+    + \cos \left( \theta_w + \theta_z - \dfrac{2\pi}{n}\right) \right) \\
+    \iff \cos \left(\theta_w + \theta_z \right) 
+    \le & \cos \left( \theta_w - \theta_z\right) \\
+    \iff \cos \theta_w \cos \theta_z - \sin \theta_w \sin \theta_z 
+    \le & \cos \theta_w \cos \theta_z + \sin \theta_w \sin \theta_z \\
+    \iff 2 \sin \theta_w \sin \theta_z \ge & 0 \\
+    \iff \sin \theta_w \sin \theta_z \ge & 0 \\
+\end{align}
+Since $\sin \theta_w > 0$ and $\sin \theta_z > 0$, we are done with this case, and have finished
+the proof. $\boxed{\text{ }}$
 \end{document}
