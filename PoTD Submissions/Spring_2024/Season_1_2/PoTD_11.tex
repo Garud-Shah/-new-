@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage{garudstyle}
+\title{\begin{center}
+    Oregon ARML PoTDs - Spring 2024
+\end{center}
+\begin{center}
+    \textbf{PoTD Problem 6}
+\end{center}} 
+\author{\textbf{Garud Shah}}
+\date{\textit{April 6th 2024}}
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\section{Problem}
+For what natural numbers $n > 2$ is $\phi (n)$ prime?
+\section{Coprime}
+Remember: $\phi(n)$ is multiplicative. So, if $p$ is a prime greater than 3, and $k$ divides $p$:
+\begin{align}
+    & \phi(pn) \mid \phi(k)  \\
+    & \phi(pn) = (p - 1) \cdot \phi(n),
+\end{align}
+so $\phi(n) = 1$, and $n = 1$ or $2$! So, only numbers of the form $2^n$, or $p$, or $2p$ with $p$ prime could be valid. 
+\newpage
+\section{Testing}
+If $p$ is a prime greater than $5$,
+since $p$ is odd, $p-1$ is not prime, so $\phi(p)$ and $\phi(2p)$ are not prime. For $2^n$, we have $\phi(2^n) = 2^{n-1}$ which isn't prime
+for $n \ge 3$. So, $p = 3$ for $p$ and $2p$ and $k = 2$ for $2^k$ are the only contenders left. \newline
+These all work:
+\begin{center}
+\begin{tabular}{|c|c|}
+    \hline
+    x & $\phi(x)$ \\
+    \hline
+    3 & 2 \\
+    4 & 2 \\
+    6 & 2 \\
+    \hline
+\end{tabular}
+\end{center}
+\end{document}
