@@ -1,0 +1,2 @@
+asy -wsl -outname Spring_2024/Season_1_2/PoTD_14/diagram.eps Spring_2024/Season_1_2/PoTD_14/diagram.asy
+epstopdf Spring_2024/Season_1_2/PoTD_14/diagram.eps
