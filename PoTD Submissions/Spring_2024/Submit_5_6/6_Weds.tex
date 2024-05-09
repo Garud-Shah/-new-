@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage{garudstyle}
+\title{\begin{center}
+    Oregon ARML PoTDs - Spring 2024
+\end{center}
+\begin{center}
+    \textbf{PoTD Problem 39}
+\end{center}} 
+\author{\textbf{Garud Shah}}
+\date{\textit{May 9th 2024}}
+\begin{document}
+\maketitle
+$\text{ }$ \newline
+Notice that 
+\begin{align} 
+    2 \cos \left(\dfrac{\pi}{4}\right) &= \sqrt{2} \\
+    \cos \left( x - \dfrac{\pi}{4} \right) &\le 1,
+\end{align}
+so 
+\begin{align}
+    2 \cos \left(\dfrac{\pi}{4}\right) \cos \left(x - \dfrac{\pi}{4} \right) \le \sqrt{2}.
+\end{align} 
+So, by product-to-sum, we have 
+\begin{align}
+    \cos x + \cos \left(x - \dfrac{\pi}{2} \right) \le \sqrt{2}.
+\end{align} 
+So, since $\dfrac{\pi}{2} > \sqrt{2}$ and $\sin x = \cos \left( x - \dfrac{\pi}{2} \right)$,
+\begin{align}
+    \dfrac{\pi}{2} > \cos x + \sin x.
+\end{align} 
+So, $\sin x > \dfrac{\pi}{2} - \cos x$, and now take cosines, giving 
+\begin{align}
+    \boxed{\cos \sin x > \sin \cos x}.
+\end{align}
+\end{document}

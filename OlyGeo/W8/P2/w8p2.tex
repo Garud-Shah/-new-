@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage{garudstyle}
+\begin{document}
+\begin{center}
+\begin{asy}
+    import olympiad;
+    import cse5;
+    size(5inch);
+    pair A, B, C;
+    A = (0, 0);
+    B = (5, 5);
+    C = (6, 0);
+    draw(A -- B -- C -- cycle);
+    pair I = incenter(A, B, C);
+    pair Aprime = foot(I, B, C);
+    pair Bprime = foot(I, C, A);
+    pair Cprime = foot(I, A, B);
+    pair P = foot(I, A, Aprime);
+    draw(I -- Aprime);
+    draw(I -- Bprime);
+    draw(I -- Cprime);
+    draw(I -- P);
+    draw(incircle(A, B, C));
+    draw(circumcircle(A, Bprime, Cprime));
+    draw(A -- Aprime);
+    draw(B -- P -- C -- cycle);
+    dot(A); dot(B); dot(C);
+    dot(Aprime); dot(Bprime); dot(Cprime);
+    dot(I); dot(P);
+    label("$A$", A, SW);
+    label("$A'$", Aprime, NE);
+    label("$B'$", Bprime, S);
+    label("$C'$", Cprime, NW);
+    label("$B$", B, W);
+    label("$C$", C, SE);
+    label("$I$", I, NW);
+    label("$P$", P, S);
+\end{asy} 
+\end{center}
+% Notice that we need
+% \begin{align}
+%     \dfrac{BP}{BA'} = \dfrac{CP}{CA'}
+% \end{align}
+% by Angle Bisector Theorem. \newline
+Define $B'$, $C'$ similarly to $A'$.
+\end{document}

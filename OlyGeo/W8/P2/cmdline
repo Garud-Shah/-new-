@@ -1,0 +1,3 @@
+asy w8p2-1.asy
+epstopdf w8p2-1.eps
+pdflatex w8p2.tex
