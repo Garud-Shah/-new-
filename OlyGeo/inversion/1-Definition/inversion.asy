@@ -1,0 +1,17 @@
+unitsize(1cm);
+real r = 5;
+real k = 3;
+pair A = (0, 0);
+dot(A);
+label("$A$", A, NW);
+pair B = (k, 0);
+dot(B);
+label("$B$", B, N);
+pair X = (r, 0);
+dot(X);
+label("$X$", X, NE);
+pair Bp = (r*r/k, 0);
+dot(Bp);
+label("$B'$", Bp, NE);
+draw(A -- (1.2*r*r/k, 0));
+draw(circle(A, r));

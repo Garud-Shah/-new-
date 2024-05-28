@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage{garudstyle}
+\title{\begin{center}
+    Oregon ARML PoTDs - Spring 2024
+\end{center}
+\begin{center}
+    \textbf{PoTD Season 7, Question 3}
+\end{center}} 
+\author{\textbf{Garud Shah}}
+\date{\textit{May 9th 2024}}
+\begin{document}
+\maketitle
+\newpage
+\section{Abundancy Of Multiples Of Abundant Numbers}
+\textbf{Definition 1.1. }Define the divisor set of $n$ to be $\mathcal{D}(n)$. \\~\\
+\textbf{Definition 1.2. }Let $A = kS$ for a set $S$ be, if the elements of $S$ are $S_i$:
+\begin{align*}
+kS_i = A_i.
+\end{align*} \\~\\
+\textbf{Definition 1.3. }Let $s(S)$ for a set $S$ be the sum of all elements of $S$. \\~\\
+\textbf{Lemma 1.4L. }$k\mathcal{D}(n) \cup 1 \subset \mathcal{D}(kn)$ when $k > 1$. \\
+\textbf{Proof 1.4P. }Notice that $k\mathcal{D}(n)$ is all $k \cdot f$ where $f$ is a factor of $n$, now let $f = \dfrac{n}{a}$ for integer $a$.
+Then 
+\begin{align*}
+    k \cdot f = \dfrac{nk}{a}, 
+\end{align*}
+so $kf \in \mathcal{D}(kn).$ Also since $1$ is the trivial divisor it is in $\mathcal{D}(kn)$. \\~\\
+\textbf{Lemma 1.5L. }$s(A \cup B) = s(A) + s(B)$ if $A$, $B$ disjoint. \\
+\textbf{Proof 1.5P. }This is a corrolary of the dditive principle.  \\~\\
+\textbf{Lemma 1.6L. }$A \subset B \implies s(A) \le s(B)$ if $A$ and $B$ only contain positive integers. \\
+\textbf{Proof 1.6P. }Notice that $s(B) - s(A) = s(B \setminus A) - s(A \setminus B)$. \\
+Since $A \subset B$, $A \setminus B = \emptyset$, 
+\begin{align*}
+    s(B) - s(A) = s(B \setminus A) - s(\emptyset).
+\end{align*} 
+Since empty sums are zero, we have $s(\emptyset) = 0$,
+so $s(B) - s(A) = s(B \setminus A)$. Since $A$ and $B$ only contain positive integers, $s(B \setminus A) \ge 0$. So, $s(B) - s(A) \ge 0$, and
+$s(B) \ge s(A)$. \\~\\
+\textbf{Lemma 1.7L. }$A \subset B \implies s(B) \ge s(A)$ if $A$ and $B$ only contain positive integers. \\
+\textbf{Proof 1.7P. }Notice that $s(B) - s(A) = s(B \cup A \setminus A) - s(A \setminus B)$ by Lemma 1.5. \newline
+Since $A \subset B$, $B \cup A = B$, and $A \setminus B = \emptyset$, 
+\begin{align*}
+    s(B) - s(A) = s(B \setminus A) - s(\emptyset).
+\end{align*} 
+Since empty sums are zero, we have $s(\emptyset) = 0$,
+so $s(B) - s(A) = s(B \setminus A)$. Since $A$ and $B$ only contain positive integers, $s(B \setminus A) \ge 0$. So, $s(B) - s(A) \ge 0$, and
+$s(B) \ge s(A)$. \\~\\~\\
+\textbf{Lemma 1.8L. }$s(kS) = ks(S)$. \\
+\textbf{Proof 1.8P. }We sum by element and this is equivilant to moving a constant out of a summation. \\~\\
+\textbf{Lemma 1.9L. (Main Theorem of Section)} If $p$ is perfect or abundant, and $k > 1$, $pk$ is abundant. \\
+\textbf{Proof 1.9P. }The definition of abundancy is equivilant to saying that $s(\mathcal{D}(n)) \ge 2n$. \\~\\
+
+Plug in $kn$. We get that, by Lemma 1.6, that $s(\mathcal{D}(kn)) \ge s(A)$ for some $A \subset \mathcal{D}(kn)$. \\~\\
+By Lemma 1.4, we set $A = k\mathcal{D}(n) \cup 1 \subset \mathcal{D}(kn)$. \\~\\
+Since $1$ and $k\mathcal{D}(n)$ are disjoint, by Lemmas 1.5 and 1.8, we have that $s(\mathcal{D}(kn)) \ge ks(\mathcal{D}(n)) + 1$. By our initial 
+assumption, $s(\mathcal{D}(n)) \ge 2n$, so $s(\mathcal{D}(kn)) \ge ks(\mathcal{D}(n)) + 1 \ge 2kn + 1$ so $s(\mathcal{D}(kn)) > 2kn$. So, $kn$ is abundant,
+and the lemma is proved.
+\newpage 
+\section{Finding Perfect Numbers Modulo 6}
+\textbf{Lemma 2.1L.} If there exist abundant numbers modulo 6 with residue 1, 2, 3, 4, and 5, we are finished. \\
+\textbf{Proof 2.1P.} Notice that 6 is perfect. So, by Lemma 1.9, we can add multiples of 6 for our result, and $12$ plus any other multiple of $6$ gives $0$ mod 6.
+\\~\\
+Notice that \textbf{28} is perfect, so by Lemma 1.9L, we can get 56 and 112 abundant, meaning we only need residues 1, 3, 5. \\
+Now, \textbf{945} is abundant, so we have residue 3 down as well. \\~\\
+\textbf{Definition 2.2.} The \textit{abundancy index} $a(n)$ is $\dfrac{s(\mathcal{D}(n))}{n}$. \\~\\
+Now, if we only include factors of $5, 7, 11, \cdots$ we will get an abundant number. We notice that by the formula for $\sigma(n) = s(\mathcal{D}(n))$, we
+can break this up into primes. Now, notice that the maximum we can get for the term of a single prime that is:
+\begin{align}
+&\lim_{k \rightarrow \infty}\dfrac{1 + p + p^2 + \cdots + p^k}{p^k} \\
+&= \lim_{k \rightarrow \infty} 1 + \dfrac{1}{p} + \dfrac{1}{p^2} + \cdots + \dfrac{1}{p^k} \\
+\end{align}
+Now, multiply this for all primes to get an inf-reachable maximum for abundancy index. Notice that we get the harmonic series, which diverges, 
+and if we divide by just the $p=2,3$ terms it still diverges. 
+So, plug in an arbitrary number of primes, use arbitrarily large powers, and we clear one of residue 1 or 5. Now multiply by 5, and the other residue of 1 or 5
+is done by mods. We are done.
+
+\end{document}

@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage{garudstyle}
+\title{\begin{center}
+    Oregon ARML PoTDs - Spring 2024
+\end{center}
+\begin{center}
+    \textbf{PoTD Season 8, Question 6}
+\end{center}} 
+\author{\textbf{Garud Shah}}
+\date{\textit{May 26th 2024}}
+\begin{document}
+\maketitle
+\newpage
+Note that 
+\begin{align*}
+    a^2 + b^2 = (a + bi)(a - bi).
+\end{align*}
+Define $z = a + bi$. Then:
+\begin{align*}
+    & a^2 + b^2 \\
+    &= (a + bi)(a - bi) \\
+    &= z \cdot \overline{z}.
+\end{align*}
+Now, notice that:
+\begin{align*}
+    & (a^2 + b^2)^n  \\
+    &= (z \cdot \overline{z})^n \\
+    &= z^n \cdot \overline{z}^n \\
+    &= z^n \cdot \overline{z^n}.
+\end{align*}
+Now, for some integer $c, d$, notice that $z^n = c + di$ by Binomial Theorem. \\~\\
+So, we can let $(x, y) = (c, d)$ and we are done. \\~\\
+Now, for the bonus, notice that the only potential problems occour in perfect square scenarios: so, either $n$ is even, or
+$a^2 + b^2 = c^2$ for some $c$. However, we only deal with the first case, as it is well known that $c = \alpha^2 + \beta^2$ for integer $\alpha, \beta$
+in the second case. \\~\\
+We need $(a^2 + b^2)^{2n} = c^2 + d^2$, or show that $(a^2 + b^2)^n = \alpha^2 + \beta^2$ for non-zero $\alpha, \beta$ and $\alpha \ne \beta$ 
+to avoid $d=0$. \\ 
+Now we prove that if an $\alpha = \beta$ solution exists, we show that some other solution must also exist. Cut because I don't have 
+time to write a proof. \\~\\
+\textbf{Note:} There need to be more conditions on this bonus. $n = 8$, $a = 1$, $b = 1$ is a counterexample and I think this is true for all 
+$n = 2k$ - I have not proved this yet, though, but I am certain for $k = 4$.
+\end{document}
